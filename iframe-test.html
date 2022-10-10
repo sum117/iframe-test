@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Iframe Test</title>
+  </head>
+  <body>
+    <header>
+      <h1>Iframe Test</h1>
+    </header>
+    <main>
+      <div class="container">
+        <iframe
+          src="https://discord.com/widget?id=1027995129803460790&theme=dark"
+          width="350"
+          height="500"
+          allowtransparency="true"
+          frameborder="0"
+          sandbox="allow-popups
+        allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        >
+        </iframe>
+        <button id="theme-btn" class="btn">Interagir com Iframe</button>
+        <p>
+            Esse site foi feito como exemplo para demonstrar que é possível a interação entre um botão do website e um iframe externo através da mudança do atributo src do iframe.
+        </p>
+      </div>
+    </main>
+    <script type="text/javascript" >
+      let btn = document.getElementsByTagName('button')[0];
+      console.log(btn)
+      let iframe = document.getElementsByTagName("iframe")[0];
+      let theme = 'dark';
+      console.log(btn)
+
+      btn.addEventListener('click', () => {
+          // Alterar o tema do iframe
+          theme = theme === 'dark' ? 'light' : 'dark';
+          iframe.src = `https://discord.com/widget?id=1027995129803460790&theme=${theme}`;
+      })
+    </script>
+  </body>
+</html>
